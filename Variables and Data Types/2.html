@@ -1,0 +1,73 @@
+ Explain the different data types in JavaScript. Provide examples for each.
+
+Ans: JavaScript has 8 main data types, grouped into Primitive and Non-Primitive (Reference) types. I’ll keep it clear with simple examples
+
+Primitive Data Types (7)
+
+    These store single values and are immutable.
+
+1.Number
+    Used for both integers and decimals.
+
+    let age = 25;
+    let price = 99.99;
+
+    console.log(typeof(age));
+    console.log(typeof(price));
+
+2.String: collection of characters.
+    Text data enclosed in quotes.
+
+    let name = "Raju";
+    let message = 'Hello JavaScript';
+    console.log(typeof(name));
+    console.log(typeof(message));
+
+3.Boolean
+
+    Logical values: true or false.
+
+    let isLoggedIn = true;
+    let hasPermission = false;
+
+    console.log(typeof(isLoggedIn));
+    console.log(typeof(hasPermission));
+
+4.Undefined
+
+    A variable declared but not assigned a value.
+
+    let x;
+    console.log(x); // undefined
+
+5.Null
+
+    Represents no value intentionally.
+
+    let user = null;
+
+6.BigInt
+
+    For numbers larger than 2⁵³ − 1.
+
+    let bigNumber = 12345678901234567890n;
+    console.log(typeof(bigNumber));
+
+7.Symbol
+
+    Used to create unique identifiers.
+
+    let id = Symbol("id");
+
+Non-Primitive (Reference) Data Types (1 main category):
+
+8.Object
+
+    Used to store collections of data or complex entities.
+
+        let user = {
+        name: "Raju",
+        age: 26
+        };
+
+        console.log(typeof(user));

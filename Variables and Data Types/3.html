@@ -1,0 +1,40 @@
+What is the difference between undefined and null in JavaScript?
+Ans: undefined Means a variable exists, but no value has been assigned yet
+
+ undefined
+
+Variable declared but not initialized
+
+Function doesn’t return anything
+
+Object property doesn’t exist
+
+Function parameter not passed
+
+    let a;
+    console.log(a); // undefined
+
+    function test() {}
+    console.log(test()); // undefined
+
+    let user = {};
+    console.log(user.name); // undefined
+
+null: Means intentional absence of value
+You assign it on purpose to say: “nothing here”.
+
+When do you use null?
+
+To reset a value
+
+To show “no object / no data”
+
+As a placeholder
+
+let b = null;
+console.log(b); // null
+
+let user = {
+  name: null // name exists, but currently empty
+};
+

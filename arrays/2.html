@@ -1,0 +1,42 @@
+Explain the methods push(), pop(), shift(), and unshift() used in arrays.?
+Ans:
+
+1.push()
+
+    Adds one or more elements to the END of an array
+
+    Ex:
+        let fruits = ["apple", "banana"];
+
+        fruits.push("mango");
+
+        console.log(fruits);
+        // ["apple", "banana", "mango"]
+
+2.pop()
+
+    Removes the LAST element from an array
+        Changes original array.
+        Returns: The removed element
+  Ex:
+    let fruits = ["apple", "banana", "mango"];
+    let removed = fruits.pop();
+    console.log(removed); // "mango"
+    console.log(fruits);  // ["apple", "banana"]
+
+3.shift()
+    Removes the FIRST element from an array
+
+    Ex:
+        let fruits = ["apple", "banana", "mango"];
+        let removed = fruits.shift();
+        console.log(removed); // "apple"
+        console.log(fruits);  // ["banana", "mango"]
+
+4.unshift()
+    Adds one or more elements to the START of an array
+    Ex:
+        let fruits = ["banana", "mango"];
+        fruits.unshift("apple");
+        console.log(fruits);
+        // ["apple", "banana", "mango"]

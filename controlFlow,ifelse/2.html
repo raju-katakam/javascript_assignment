@@ -1,0 +1,65 @@
+Describe how switch statements work in JavaScript. When should you use a
+switch statement instead of if-else?
+
+Ans:In JavaScript, a switch statement is a control structure used to execute different blocks of code based on the value of a single expression. It’s essentially a cleaner way to compare one value against many possible options.
+
+What happens step by step
+
+    The expression is evaluated once.
+
+    JavaScript compares the result to each case using strict equality (===).
+
+    When a matching case is found, its code runs.
+
+    The break statement stops execution and exits the switch.
+
+    If no cases match, the default block (if present) runs.
+
+Important details
+break matters:
+
+    If you forget break, execution will “fall through” to the next case:
+
+    Ex:
+        switch (role) {
+        case "admin":
+            accessLevel = "full";
+            break;
+        case "editor":
+            accessLevel = "limited";
+            break;
+        case "viewer":
+            accessLevel = "read-only";
+            break;
+        }
+
+
+
+    Multiple cases can share logic
+        switch (grade) {
+        case "A":
+        case "B":
+            console.log("Great job!");
+            break;
+        case "C":
+            console.log("Good effort");
+            break;
+        default:
+            console.log("Needs improvement");
+        }
+
+Use if-else when:
+
+Conditions involve ranges, logic operators, or different variables
+
+You need complex boolean expressions
+
+Example (better with if-else):
+
+    if (score >= 90) {
+    grade = "A";
+    } else if (score >= 80) {
+    grade = "B";
+    } else {
+    grade = "C";
+    }

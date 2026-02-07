@@ -1,0 +1,87 @@
+Discuss the concept of parameters and return values in functions.
+
+Ans:
+  1.Parameters in Functions
+
+Parameters are variables listed in a function's definition.
+They act like inputs—you pass data into a function so it can work with it.
+
+Why parameters are useful
+
+    Make functions reusable
+    Avoid hard-coding values
+    Let the same function work with different data
+
+    Ex:
+        function add(a, b) {   // a and b are parameters
+            return a + b;
+            }
+        add(5, 3);  // 5 and 3 are arguments
+
+    Parameters → variables in function definition (a, b)
+    Arguments → actual values passed (5, 3)
+
+    Types of parameters
+
+        Required parameters
+
+        Default parameters
+
+        function greet(name = "Guest") {
+        console.log("Hello " + name);
+        }
+
+
+    Rest parameters
+
+        function sum(...numbers) {
+        return numbers.reduce((a, b) => a + b, 0);
+        }
+
+
+  2. Return Values in Functions:
+
+        A return value is the output a function sends back after execution.
+            Why return values matter
+            Allow functions to produce results
+            Enable function chaining
+            Make logic testable and reusable
+
+        Ex:
+            function square(num) {
+                return num * num;
+            }
+
+            let result = square(4); // result = 16
+
+            Once return runs:
+
+                Function stops executing
+
+                Value is sent back to the caller
+
+                Functions without return
+
+Functions without return
+
+        If no return is used:
+
+        JavaScript returns undefined
+
+        PHP returns null
+
+3.Parameters + Return Values Together
+
+            Ex:
+
+                function calculateTotal(price, tax) {
+                    return price + (price * tax);
+                }
+
+                calculateTotal(100, 0.18); // 118
+
+    Key Takeaways
+
+    Parameters pass data into a function
+    Return values send data out of a function
+    Together, they make functions flexible and powerful
