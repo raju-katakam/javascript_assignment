@@ -1,0 +1,111 @@
+ Discuss the importance of using curly braces {} in JSX expressions.
+
+ Ans:   
+        In JSX (React.js), curly braces {} are very important because they allow you to write JavaScript expressions inside JSX (which looks like HTML). JSX itself is not pure HTML—it is JavaScript syntax, so {} is used to switch from HTML-like code to JavaScript.
+
+            Importance of Curly Braces {} in JSX:
+            1. Insert JavaScript Values into JSX
+
+            Curly braces allow you to display variables or expressions inside JSX.
+
+            Example:
+
+            const name = "Raju";
+
+            function App() {
+            return <h1>Hello {name}</h1>;
+            }
+
+            Output:
+
+            Hello Raju
+
+            Here {name} inserts the JavaScript variable into JSX.
+
+            2. Use JavaScript Expressions
+
+            You can perform calculations or operations inside {}.
+
+            Example:
+
+            function App() {
+            return <h2>2 + 3 = {2 + 3}</h2>;
+            }
+
+            Output:
+
+            2 + 3 = 5
+
+            So {} allows expressions like:
+
+            Math operations
+            Variables
+            Functions
+            Conditions
+            3. Call Functions
+
+            You can call functions inside JSX using {}.
+
+            function greet() {
+            return "Good Morning";
+            }
+
+            function App() {
+            return <h1>{greet()}</h1>;
+            }
+
+            Output:
+
+            Good Morning
+            4. Conditional Rendering
+
+            Curly braces help in writing conditions like if, ternary, or &&.
+
+            const isLoggedIn = true;
+
+            function App() {
+            return (
+                <div>
+                {isLoggedIn ? <h1>Welcome User</h1> : <h1>Please Login</h1>}
+                </div>
+            );
+            }
+            5. Apply Dynamic Attributes
+
+            Curly braces allow dynamic values in attributes.
+
+            const color = "red";
+
+            function App() {
+            return <h1 style={{ color: color }}>Hello</h1>;
+            }
+
+            Here:
+
+            {} → JavaScript expression
+            {{}} → JavaScript object
+            6. Loop Through Data
+
+            Curly braces allow using .map() to render lists.
+
+            const fruits = ["Apple", "Banana", "Mango"];
+
+            function App() {
+            return (
+                <ul>
+                {fruits.map((fruit, index) => (
+                    <li key={index}>{fruit}</li>
+                ))}
+                </ul>
+            );
+            }
+            Key Points
+            {} is used to write JavaScript inside JSX
+            It helps to:
+            Display variables
+            Perform calculations
+            Call functions
+            Apply conditions
+            Add dynamic styles and attributes
+            Render lists
+            Without {}, JSX behaves like static HTML

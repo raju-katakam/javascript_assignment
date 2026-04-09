@@ -1,0 +1,100 @@
+ Why is error handling important in JavaScript applications?
+  Ans:
+      Error handling is important in JavaScript applications because it helps manage unexpected problems and keeps the application running smoothly instead of crashing. It improves user experience, debugging, and application stability.
+
+Why Error Handling is Important
+
+1. Prevents Application Crashes:
+
+Without error handling, a single error can stop the entire JavaScript program.
+With try...catch, the program continues running even if an error occurs.
+
+Example:
+
+try {
+  let result = 10 / a; // a is not defined
+  console.log(result);
+} catch (error) {
+  console.log("Something went wrong");
+}
+
+👉 The application does not crash and shows a message.
+
+2. Improves User Experience:
+
+Users should not see technical errors like:
+
+Uncaught ReferenceError: a is not defined
+
+Instead, they should see friendly messages like:
+
+"Something went wrong. Please try again."
+
+This makes the application more professional and user-friendly. 😊
+
+3. Helps in Debugging:
+
+Error handling provides error details such as:
+
+error message
+line number
+error type
+
+Example:
+
+try {
+  JSON.parse("invalid json");
+} catch (error) {
+  console.log(error.message);
+}
+
+Output:
+
+Unexpected token i in JSON
+
+Developers can easily find and fix issues.
+
+4. Maintains Application Flow:
+
+Even if an error occurs, other parts of the application can continue working.
+
+Example:
+
+try {
+  let data = JSON.parse(userData);
+} catch (error) {
+  console.log("Invalid data");
+}
+
+console.log("Program continues...");
+
+5. Handles Runtime Errors Safely:
+
+JavaScript runs in the browser, so runtime errors like:
+
+API failure
+network error
+invalid input
+undefined variables
+
+can be handled safely using error handling.
+
+6. Ensures Proper Cleanup (finally block):
+
+The finally block runs whether an error occurs or not.
+
+try {
+  console.log("Connecting...");
+} catch (error) {
+  console.log("Error occurred");
+} finally {
+  console.log("Connection closed");
+}
+Summary :
+Benefit	                   Explanation
+Prevents crashes	     Application keeps running
+Better user experience	 Shows friendly messages
+Easy debugging	         Provides error details
+Maintains flow	         Program continues execution
+Safe runtime handling	 Handles API and input errors  
+Cleanup support	         finally block executes always

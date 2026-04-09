@@ -1,0 +1,76 @@
+2.How does the addEventListener() method work in JavaScript? Provide an example
+
+Ans:    addEventListener() in JavaScript
+
+    The addEventListener() method is used to attach an event handler to an HTML element. It allows you to listen for events (like click, submit, mouseover, keydown, etc.) and execute a function when the event occurs
+
+Syntax:
+    element.addEventListener(event, function, useCapture);
+
+Parameters:
+
+event - The name of the event (e.g., "click", "submit", "mouseover").
+function - The function to run when the event happens.
+useCapture (optional) - true or false (default is false, meaning bubbling phase).
+
+Example 1: Button Click Event
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>addEventListener Example</title>
+    </head>
+    <body>
+
+    <button id="btn">Click Me</button>
+
+    <script>
+        let button = document.getElementById("btn");
+
+        button.addEventListener("click", function() {
+            alert("Button was clicked!");
+        });
+    </script>
+
+    </body>
+    </html>
+Output
+
+When you click the button, an alert message appears:
+"Button was clicked!"
+
+Example 2: Using Named Function
+    <button id="btn">Click Me</button>
+
+    <script>
+        let button = document.getElementById("btn");
+
+        function showMessage() {
+            console.log("Hello Raju!");
+        }
+
+        button.addEventListener("click", showMessage);
+    </script>
+Explanation
+    getElementById("btn") selects the button
+    addEventListener("click", showMessage) attaches a click event
+    When the button is clicked, showMessage() runs
+    Example 3: Multiple Events on Same Element
+    let button = document.getElementById("btn");
+
+    button.addEventListener("click", function() {
+        console.log("Clicked");
+    });
+
+    button.addEventListener("mouseover", function() {
+        console.log("Mouse Over");
+    });
+
+Here:
+
+Click → prints Clicked
+Mouse over → prints Mouse Over
+Advantages of addEventListener()
+Can add multiple events to the same element
+Keeps HTML and JavaScript separate
+Better control over event bubbling and capturing
+Can remove event using removeEventListener()

@@ -1,0 +1,134 @@
+What are components in React? Explain the difference between functional
+components and class components.
+
+Ans:
+        Components in React are reusable and independent pieces of UI (User Interface).
+        They help divide the UI into small, manageable parts, making the application easier to build, maintain, and reuse.
+
+        A React application is built using multiple components like:
+
+        Header
+        Footer
+        Sidebar
+        Button
+        Form
+        Card
+
+        Each component returns JSX and controls a part of the UI.
+
+        Example of a Simple Component
+        function Welcome() {
+        return <h1>Welcome to React</h1>;
+        }
+
+        export default Welcome;
+
+        This component displays a heading on the screen.
+
+Functional Components vs Class Components:
+
+Feature	            Functional Component	            Class Component
+
+Definition	        Simple JavaScript function	          ES6 class
+Syntax	            Easier and shorter	                  More complex
+State	            Uses Hooks (useState, useEffect)	  Uses this.state
+Lifecycle Methods	useEffect hook	                      componentDidMount, componentDidUpdate
+Performance	        Faster and cleaner	                   Slightly heavier
+this Keyword	    Not used	                          Uses this keyword
+Modern Usage	    Recommended	                          Mostly outdated
+
+
+1. Functional Component
+
+A functional component is a simple JavaScript function that returns JSX.
+
+Example
+import React from "react";
+
+function Greeting() {
+  return <h2>Hello User</h2>;
+}
+
+export default Greeting;
+With State (Using Hook)
+import React, { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h2>{count}</h2>
+      <button onClick={() => setCount(count + 1)}>Click</button>
+    </div>
+  );
+}
+
+export default Counter;
+Advantages
+Simple and clean
+Less code
+Easy to understand
+Uses Hooks
+Recommended in modern React
+2. Class Component
+
+A class component is created using ES6 class and extends React.Component.
+
+Example
+import React, { Component } from "react";
+
+class Greeting extends Component {
+  render() {
+    return <h2>Hello User</h2>;
+  }
+}
+
+export default Greeting;
+With State
+import React, { Component } from "react";
+
+class Counter extends Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>{this.state.count}</h2>
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+          Click
+        </button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+
+Disadvantages:
+
+More code
+Uses this
+Harder to manage
+Less used in modern React
+
+Key Differences in Simple Words
+
+Functional Component:
+
+Simple function
+Uses Hooks
+Easy to write
+Modern React uses this
+
+Class Component:
+
+Uses class
+Uses this.state
+More complex
+Old method

@@ -1,0 +1,121 @@
+1.What are JavaScript events? Explain the role of event listeners.
+ Ans:  
+    JavaScript Events
+
+    JavaScript events are actions or occurrences that happen in the browser and can be detected by JavaScript to perform some task.
+    These actions can be done by the user or by the browser itself.
+
+    Examples of Events
+        Mouse click
+        Key press
+        Page load
+        Form submit
+        Mouse over
+        Button click
+
+
+    Example of JavaScript Event
+    <button onclick="showMessage()">Click Me</button>
+
+    <script>
+    function showMessage() {
+        alert("Button Clicked!");
+    }
+    </script>
+
+    Explanation:
+
+    onclick is an event
+    When the user clicks the button
+    showMessage() function runs.
+
+Role of Event Listeners
+
+    An event listener waits for an event to happen and then runs a function.
+
+    Definition
+
+    An event listener is a function that listens for an event and executes code when the event occurs.
+
+    Syntax
+    element.addEventListener("event", function);
+    Parameters
+    event → type of event (click, keydown, submit)
+    function → function to run when event happens
+    Example
+    <button id="btn">Click Me</button>
+
+    <script>
+    let button = document.getElementById("btn");
+
+    button.addEventListener("click", function() {
+        alert("Button Clicked using Event Listener");
+    });
+    </script>
+    How it works
+    Select button
+    Add event listener
+    Wait for click
+    Run function
+
+
+Common          Events
+Event	    Description
+click	    When button is clicked
+mouseover	When mouse moves over element
+keydown	    When key is pressed
+submit	    When form is submitted
+load	    When page loads
+
+Inline Event vs Event Listener
+Inline Event
+
+    <button onclick="hello()">Click</button>
+
+    Event Listener
+
+    button.addEventListener("click", hello);
+
+Difference
+
+    Inline Event	    Event Listener
+    Written in HTML	    Written in JavaScript
+    Hard to manage	    Easy to manage
+    Less flexible	    More flexible
+    Not recommended	    Recommended 
+
+Multiple Event Listeners Example
+
+    let btn = document.getElementById("btn");
+
+    btn.addEventListener("click", function() {
+        console.log("Clicked");
+    });
+
+    btn.addEventListener("mouseover", function() {
+        console.log("Mouse Over");
+    });
+
+ One element can have multiple event listeners.
+
+Why Event Listeners are Important
+
+    Make web pages interactive
+    Handle user actions
+    Keep JavaScript separate from HTML
+    Allow multiple functions on same event
+    Improve code structure
+
+Simple Real-Life Example:
+
+    <input type="text" id="name" placeholder="Enter name">
+
+    <script>
+    document.getElementById("name")
+    .addEventListener("keyup", function() {
+        console.log("User typing...");
+    });
+    </script>
+
+    Output:
+    When user types in input box → message shows in console.

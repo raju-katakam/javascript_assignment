@@ -1,0 +1,106 @@
+Explain the concept of state in React and how it is used to manage component
+data
+
+Ans:
+        State in React is an object that stores dynamic data of a component and controls how the component behaves and renders. It allows components to update and re-render automatically when data changes.
+
+In simple words, state is used to manage changing data inside a component.
+
+Key Points of State
+State is mutable (can change over time)
+State is managed inside the component
+When state changes, the component re-renders automatically
+Used to store dynamic data like:
+form inputs
+counters
+user data
+API responses
+UI changes
+Example: State in Functional Component
+import React, { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h2>Count: {count}</h2>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
+}
+
+export default Counter;
+Explanation
+useState(0) → initializes state with value 0
+count → current state value
+setCount() → function to update state
+When button is clicked → state updates → component re-renders
+
+Output:
+
+Count: 0
+Increase button
+
+Click button → Count becomes 1, 2, 3...
+
+State in Class Component
+import React, { Component } from "react";
+
+class Counter extends Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0
+    };
+  }
+
+  increase = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  render() {
+    return (
+      <div>
+        <h2>Count: {this.state.count}</h2>
+        <button onClick={this.increase}>Increase</button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+
+How State Manages Component Data
+
+Feature	             Explanation
+
+Stores Data	         Holds component-specific data
+Updates UI	          Automatically updates UI on change
+Controls Behavior	Controls events, forms, counters, toggles
+Dynamic Rendering	React re-renders when state updates
+
+Real-life Example
+
+Login Form
+
+State stores:
+
+username
+password
+isLoggedIn
+
+When user types:
+
+state updates → UI updates automatically
+Props vs State
+Props	State
+Passed from parent	Managed inside component
+Read-only	Can be changed
+Used for communication	Used for dynamic data
+Summary
+State is used to store and manage dynamic data
+It helps control component behavior
+Updating state automatically updates UI
+Functional components use useState()
+Class components use this.state and setState()

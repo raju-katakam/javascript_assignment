@@ -1,0 +1,111 @@
+Explain the setTimeout() and setInterval() functions in JavaScript. Howare they used for timing events?
+Ans: In JavaScript, setTimeout() and setInterval() are timing functions used to execute code after a certain delay or repeatedly after a fixed time interval. They are part of the Web APIs and help in handling asynchronous operations and timing events.
+
+1.setTimeout():
+
+setTimeout() is used to execute a function once after a specified delay (in milliseconds).
+
+syntax:
+
+    setTimeout(function, delay);
+
+    function → code to run
+    delay → time in milliseconds (1000 ms = 1 second)
+
+Ex:
+    <p id="msg">Hello</p>
+
+    <script>
+    setTimeout(function() {
+        document.getElementById("msg").textContent = "JavaScript is fun!";
+    }, 2000);
+    </script>
+
+Use Cases:
+
+Show message after delay
+Auto logout after inactivity
+Notification popups
+Loading screen
+
+2.setInterval():
+
+setInterval() is used to execute a function repeatedly at a fixed time interval.
+
+Syntax:
+
+setInterval(function, interval);
+
+function → code to run
+interval → time in milliseconds
+
+Ex:
+
+    <p id="time"></p>
+
+    <script>
+    setInterval(function() {
+        document.getElementById("time").textContent = new Date().toLocaleTimeString();
+    }, 1000);
+    </script>
+
+Output:
+
+The current time updates every 1 second
+
+Use Cases:
+
+Clock
+Auto refresh data
+Animation
+Timer
+Game loops
+
+3.Clearing Timers:
+
+stop setTimeout() :
+
+let timer = setTimeout(function() {
+    alert("Hello");
+}, 3000);
+clearTimeout(timer);
+
+
+stop setInterval():
+
+let interval = setInterval(function() {
+    console.log("Running...");
+}, 1000);
+clearInterval(interval);
+
+
+Difference Between setTimeout and setInterval
+
+Feature	    setTimeout()	    setInterval()
+Execution	Runs once	        Runs repeatedly
+Timing	    After delay	        Every interval
+Stop function	clearTimeout()	clearInterval()
+Use case	Delayed action	    Repeated action
+
+
+Real-Life Example:
+
+let count = 5;
+
+let timer = setInterval(function() {
+    console.log(count);
+    count--;
+
+    if(count < 0) {
+        clearInterval(timer);
+        console.log("Time's up!");
+    }
+}, 1000);
+Output
+5
+4
+3
+2
+1
+0
+Time's up!

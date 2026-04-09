@@ -1,0 +1,90 @@
+1: What is the DOM (Document Object Model) in JavaScript? How does JavaScript interact with the DOM?
+Ans:  The DOM (Document Object Model) is a programming interface for web pages that represents the HTML document as a tree structure of objects.
+        It allows JavaScript to access, modify, and manipulate HTML elements, attributes, and content dynamically.
+
+In simple words:
+    DOM connects JavaScript with HTML so that JavaScript can change the webpage.
+
+Ex:
+    <!DOCTYPE html>
+    <html>
+    <body>
+    <h1 id="title">Hello World</h1>
+    <p>This is a paragraph</p>
+    </body>
+    </html>
+
+DOM Tree Structure
+Document
+   |
+  html
+   |
+  body
+  /   \
+h1     p
+
+Each element becomes an object that JavaScript can control.
+
+How JavaScript Interacts with the DOM
+
+JavaScript uses DOM methods and properties to interact with HTML elements.
+
+1. Selecting Elements
+
+JavaScript selects elements using:
+
+document.getElementById("title")
+document.querySelector("p")
+document.querySelectorAll("p")
+
+Example:
+
+let heading = document.getElementById("title");
+console.log(heading);
+2. Changing Content
+
+JavaScript can change text or HTML.
+
+document.getElementById("title").innerHTML = "Welcome Raju";
+
+Output:
+
+Hello World → Welcome Raju
+3. Changing Style
+document.getElementById("title").style.color = "red";
+document.getElementById("title").style.fontSize = "30px";
+4. Adding/Removing Elements
+let newPara = document.createElement("p");
+newPara.textContent = "New Paragraph Added";
+
+document.body.appendChild(newPara);
+5. Handling Events
+
+JavaScript interacts with DOM using events.
+
+<button id="btn">Click Me</button>
+document.getElementById("btn").addEventListener("click", function() {
+    alert("Button Clicked!");
+});
+Real Life Flow
+HTML Page → DOM Created → JavaScript Access DOM → Modify Page
+
+Example:
+
+<h1 id="demo">Hello</h1>
+<button onclick="changeText()">Click</button>
+
+<script>
+function changeText() {
+    document.getElementById("demo").innerHTML = "Hello Raju";
+}
+</script>
+
+When button is clicked → JavaScript changes the DOM → Page updates instantly.
+
+Key Roles of DOM
+Access HTML elements
+Modify content 
+Change styles 
+Handle events
+Create and delete elements.

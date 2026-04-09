@@ -1,0 +1,72 @@
+2.Explain the methods getElementById(), getElementsByClassName(),and querySelector() used to select elements from the DOM.
+ Ans: getElementById():
+
+     Definition
+    getElementById() selects one HTML element using its unique id.
+Ex:
+    <p id="title">Hello World</p>
+
+    <script>
+    let element = document.getElementById("title");
+    console.log(element.textContent);
+    </script>
+Key Points:
+
+Selects only one element
+ID must be unique
+Returns a single element object
+
+getElementsByClassName()
+     Definition
+
+getElementsByClassName() selects all elements with a given class name.
+
+     Syntax
+document.getElementsByClassName("className");
+     Example
+<p class="text">First</p>
+<p class="text">Second</p>
+
+<script>
+let elements = document.getElementsByClassName("text");
+
+console.log(elements[0].textContent);
+console.log(elements[1].textContent);
+</script>
+ Output
+First
+Second
+ Key Points
+Selects multiple elements
+Returns HTMLCollection
+
+Access using index
+
+elements[0]
+elements[1]
+
+querySelector()
+ Definition
+
+querySelector() selects the first element that matches a CSS selector.
+
+ Syntax
+document.querySelector("selector");
+ Example
+<p class="text">Hello</p>
+
+<script>
+let element = document.querySelector(".text");
+console.log(element.textContent);
+</script>
+ Output
+Hello
+ You can use:
+document.querySelector("#id")
+document.querySelector(".class")
+document.querySelector("p")
+document.querySelector("div p")
+ Key Points
+Selects first matching element
+Uses CSS selectors
+More flexible

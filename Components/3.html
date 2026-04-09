@@ -1,0 +1,72 @@
+What is the role of render() in class components?
+ Ans: 
+    In React class components, the render() method plays a very important role.
+
+Role of render() in Class Components
+
+The render() method is responsible for returning the JSX (UI) that should be displayed on the screen.
+
+Key Points
+Mandatory in class components
+Every class component must include a render() method.
+Returns JSX
+The render() method returns JSX that describes what should appear in the UI.
+Pure Function
+It should not modify state directly or perform API calls. It only returns UI based on props and state.
+Re-renders on state/props change
+When state or props change, React automatically calls render() again to update the UI.
+Example
+import React, { Component } from "react";
+
+class Welcome extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Welcome to React</h1>
+        <p>This is a class component.</p>
+      </div>
+    );
+  }
+}
+
+export default Welcome;
+Explanation
+class Welcome extends Component → Creating a class component
+render() → Returns JSX
+JSX → Displayed on the browser
+React calls render() whenever the component updates
+Example with State
+import React, { Component } from "react";
+
+class Counter extends Component {
+  state = {
+    count: 0
+  };
+
+  render() {
+    return (
+      <div>
+        <h2>Count: {this.state.count}</h2>
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+          Increase
+        </button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+What happens here?
+render() shows the count
+When button is clicked → setState() updates state
+React calls render() again
+UI updates automatically
+In Simple Words
+
+render() method = Displays UI of the class component
+
+It:
+
+returns JSX
+shows data from state and props
+updates UI when data changes

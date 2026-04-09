@@ -1,0 +1,93 @@
+2: Explain how to access and update object properties using dot notation and bracket notation.
+ Ans: 
+
+ 1)Dot Notation
+    
+    let user = {
+        name: "Raju",
+        age: 25,
+        city: "Ahmedabad"
+    };
+
+    // Access property
+    console.log(user.name);   // Raju
+    console.log(user.age);    // 25
+
+    // Update property
+    user.age = 26;
+
+    console.log(user.age);    // 26
+
+    Use Dot Notation When:
+    =======================
+        Property name is known
+        Property name has no spaces
+        Property name is simple
+
+
+     Bracket Notation:
+     ==================
+        Example:
+        let user = {
+            name: "Raju",
+            age: 25,
+            city: "Ahmedabad"
+        };
+
+        // Access property
+        console.log(user["name"]);   // Raju
+        console.log(user["age"]);    // 25
+
+        // Update property
+        user["city"] = "Surat";
+
+        console.log(user["city"]);   // Surat
+
+    When Bracket Notation is Useful:
+     Property with Space
+        let student = {
+            "first name": "Raju"
+        };
+
+        console.log(student["first name"]);
+
+     Dot notation will not work
+
+        student.first name  // error
+
+
+    Dynamic Property Name
+        let user = {
+            name: "Raju",
+            age: 25
+        };
+
+        let key = "name";
+
+        console.log(user[key]);  // Raju
+
+        Here key is dynamic, so bracket notation is required.
+
+     Update Using Variable
+        let product = {
+            title: "Laptop",
+            price: 50000
+        };
+
+        let updateField = "price";
+
+        product[updateField] = 55000;
+
+        console.log(product.price); // 55000
+     Add New Property
+        Dot Notation
+        user.country = "India";
+        Bracket Notation
+        user["state"] = "Gujarat";
+
+     Delete Property
+        delete user.age;
+
+        or
+
+        delete user["city"];

@@ -1,0 +1,93 @@
+How is JSX different from regular JavaScript? Can you write JavaScript inside
+JSX?
+  Ans:
+        JSX (JavaScript XML) is a syntax extension used in React that looks like HTML but works inside JavaScript. It helps developers write UI code in a cleaner and more readable way.
+
+            JSX	                                            Regular JavaScript
+
+            Looks like HTML inside JavaScript	            Uses pure JavaScript functions
+            Easier to write UI components	                Harder to write UI using createElement
+            Needs transpilation (Babel converts JSX to JS)	Runs directly in browser
+            More readable and structured	                More verbose
+
+    Example:
+
+    JSX Code:
+
+    const element = <h1>Hello World</h1>;
+
+    Regular JavaScript Code:
+
+    const element = React.createElement("h1", null, "Hello World");
+
+    JSX is just a simpler way of writing the same JavaScript code.
+
+
+
+    Can you write JavaScript inside JSX?
+
+        Yes, you can write JavaScript inside JSX using curly braces {}.
+
+        Example 1: Variable inside JSX
+        function App() {
+        const name = "Raju";
+        return <h1>Hello {name}</h1>;
+        }
+
+        Output:
+        Hello Raju
+
+        Example 2: Expression inside JSX
+        function App() {
+        const a = 10;
+        const b = 20;
+
+        return <h1>Sum is {a + b}</h1>;
+        }
+
+        Output:
+        Sum is 30
+
+        Example 3: Function inside JSX
+        function App() {
+        function greet() {
+            return "Welcome to React";
+        }
+
+        return <h1>{greet()}</h1>;
+        }
+
+        Output:
+        Welcome to React
+
+        What can be written inside {} in JSX?
+
+        You can write:
+
+        Variables
+        Expressions
+        Functions
+        Arithmetic operations
+        Conditional expressions (ternary)
+
+        Example:
+
+        <h1>{10 > 5 ? "Yes" : "No"}</h1>
+        Important Rule
+
+        ❌ You cannot write statements like:
+
+        if
+        for
+        while
+
+        directly inside JSX.
+
+        ✔ Instead use:
+
+        ternary operator
+        map()
+
+        Example:
+
+        {isLoggedIn ? <h1>Welcome</h1> : <h1>Please Login</h1>}
